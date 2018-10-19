@@ -1,0 +1,31 @@
+package matrizsomaa;
+
+public class Matrizsoma {
+	public static void main (String[] args) {
+		int soma=0;
+		int matrizsoma [][] = new int [3][3];
+		matrizsoma [0][0] = 1;
+		matrizsoma [0][1] = 10;
+		matrizsoma [0][2] = 20;
+		
+		matrizsoma [1][0]= 2;
+		matrizsoma [1][1]= 20;
+		matrizsoma [1][2]= 40;
+		
+		matrizsoma [2][0]= 3;
+		matrizsoma [2][1]= 52;
+		matrizsoma [2][2]= 74;
+		
+			for(int i=0; i<=2;i++) {
+				for(int j=0; j<=2;j++) {
+					System.out.print(matrizsoma[i][j]+" ");
+					if(i==j) {
+						soma = matrizsoma[i][j]+soma;
+					}
+				}
+				System.out.println(" ");
+			}
+			System.out.println("O valor da soma da matriz na diagonal é:"+soma);
+	}
+
+}
