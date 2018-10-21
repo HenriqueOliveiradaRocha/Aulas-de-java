@@ -23,7 +23,8 @@ public class Matrizmult {
 					j= i+2;
 					multi=matrizmulti[i][j]*multi;
 				}
-				if(i==j && i==1 && j==1) {
+				if(i==1) {
+					j=i;
 					multi=matrizmulti[i][j]*multi;
 				}
 				if(i==2) {
