@@ -80,7 +80,7 @@ public class Calculadora extends JFrame {
 	JButton zero = new JButton("0");
 	
 	FuncoesMatematicas mat = new FuncoesMatematicas();
-	String sinal = null;
+	public String sinal = null;
 	double valor1 = 0, valor2 = 0;
 	
 	public Calculadora(){
@@ -265,6 +265,13 @@ public class Calculadora extends JFrame {
 		btnporc.setMargin(new Insets(1,1,1,1));
 		btnporc.setBounds(160, 155, 30, 25);
 		paine.add(btnporc);
+		btnporc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor2 = Double.parseDouble(visor.getText());
+				mat.porcCal(valor1, valor2);
+				visor.setText(mat.contaporc + "");
+			}
+		});
 	
 		
 		//quarta fileira
@@ -446,6 +453,11 @@ public class Calculadora extends JFrame {
 		btnvirgula.setMargin(new Insets(1,1,1,1));
 		btnvirgula.setBounds(90, 245, 30, 25);
 		paine.add(btnvirgula);
+		btnvirgula.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				visor.setText(Double.parseDouble(visor.getText())+"");
+			}
+		});
 		
 		btnfmais.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnfmais.setMargin(new Insets(1,1,1,1));
@@ -468,13 +480,6 @@ public class Calculadora extends JFrame {
 
 	public static void main(String []args) {
 		Calculadora calc = new Calculadora();
-	}
-	
-	public void executarPorc() {
-		FuncoesMatematicas exePorc = new FuncoesMatematicas();
-		double valorPorc = Double.parseDouble(visor.getText());
-		exePorc.porcCal(valorPorc);
-			}
-		
+	}	
 	}
 
